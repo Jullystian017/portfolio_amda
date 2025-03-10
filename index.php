@@ -1,0 +1,257 @@
+<?php
+include "config.php";
+
+
+if (isset($_POST['submit'])) {
+  $username = $_POST['name'];
+  $email = $_POST['email'];
+  $pesan = $_POST['message'];
+
+  $sql = "INSERT INTO table_komen (Name, Email, Message) VALUES ('$username','$email','$pesan')";
+
+  if ($conn->query($sql)) {
+      echo "Berhasil";
+  } else {
+      echo "gagal";
+  }
+}
+?>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Website</title>
+    <link rel="stylesheet" href="/portofolio/style.css">
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header class="navbar">
+        <h2 class="logo">Portfolio</h2>
+        <nav>
+            <ul class="menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#education">Education & Skills</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="hamburger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </header>
+
+    <!-- Home Section -->
+    <section id="home">
+        <div class="home-content">
+            <h3>Hello, It's Me</h3>
+            <h1>Hamanda Widiantoro</h1>
+            <p>I'm a passionate Web Developer with expertise in creating visually appealing and functional websites. Specialized in front-end development with a strong understanding of user experience.</p>
+            <div class="social-media">
+                <a href="#"><i>fb</i></a>
+                <a href="#"><i>tw</i></a>
+                <a href="#"><i>ig</i></a>
+                <a href="#"><i>in</i></a>
+            </div>
+            <a href="#" class="btn">Download CV</a>
+        </div>
+        <div class="home-img">
+            <img src="gambar muka.jpg" alt="profile">
+        </div>
+        <div class="home-bg">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="about-row">
+            <div class="about-col1">
+                <img src="muka 3.jpg" alt="about me">
+            </div>
+            <div class="about-col2">
+                <h2 class="sub-title">About Me</h2>
+                <p>I am a dedicated web developer with a strong passion for creating beautiful, responsive websites. With over 5 years of experience in the industry, I've developed expertise in various front-end and back-end technologies. I enjoy solving complex problems and turning ideas into reality through elegant code. When I'm not coding, you can find me exploring new technologies, contributing to open-source projects, or enjoying nature walks.</p>
+                
+                <div class="tab-titles">
+                    <p class="tab-links active-link" data-tab="skills">Skills</p>
+                    <p class="tab-links" data-tab="experience">Experience</p>
+                    <p class="tab-links" data-tab="interests">Interests</p>
+                </div>
+                
+                <div class="tab-contents active-tab" id="skills">
+                    <ul>
+                        <li><span>UI/UX</span><br>Designing Web/App interfaces</li>
+                        <li><span>Web Development</span><br>Web app development</li>
+                        <li><span>App Development</span><br>Building Android/iOS apps</li>
+                    </ul>
+                </div>
+                
+                <div class="tab-contents" id="interests">
+                    <ul>
+                        <li><span>Open Source</span><br>Contributing to community projects</li>
+                        <li><span>Teaching</span><br>Mentoring junior developers</li>
+                        <li><span>Design</span><br>Creating digital art and UI concepts</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education & Skills Section -->
+    <section id="education">
+        <h2 class="sub-title">Education & Skills</h2>
+        <div class="skills-row">
+            <div class="skills-col">
+                <h3>My Education</h3>
+                <div class="education-list">
+                    <div class="education-item">
+                        <p class="year">2015 - 2020</p>
+                        <h3 class="school">Jubilee School & SD Palm Kids</h3>
+                        <p class="degree">Jakarta & Purwokerto</p>
+                    </div>
+                    <div class="education-item">
+                        <p class="year">2020 - 2024</p>
+                        <h3 class="school">SMP Telkom Purwokerto</h3>
+                        <p class="degree">Junior IT Purwokerto School</p>
+                    </div>
+                    <div class="education-item">
+                        <p class="year">2024 - Now</p>
+                        <h3 class="school">SMK Telkom</h3>
+                        <p class="degree">Senior IT School Purwokerto</p>
+                    </div>
+                </div>
+            </div>
+            <div class="skills-col">
+                <h3>My Skills</h3>
+                <div class="skills-list">
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <p>HTML/CSS</p>
+                            <p>80%</p>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-progress="95"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <p>JavaScript</p>
+                            <p>70%</p>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-progress="85"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <p>React</p>
+                            <p>85%</p>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-progress="80"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <p>Node.js</p>
+                            <p>70%</p>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-progress="75"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <p>UI/UX Design</p>
+                            <p>90%</p>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-progress="90"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio">
+        <h2 class="sub-title">My Portfolio</h2>
+        <div class="work-list">
+            <div class="work">
+                <img src="/api/placeholder/400/300" alt="project 1">
+                <div class="layer">
+                    <h3>E-commerce Website</h3>
+                    <p>A fully responsive e-commerce platform with product filtering, cart functionality, and secure payment processing.</p>
+                    <a href="#"><i>→</i></a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="/api/placeholder/400/300" alt="project 2">
+                <div class="layer">
+                    <h3>Mobile App UI</h3>
+                    <p>Clean and intuitive UI design for a health and fitness tracking mobile application.</p>
+                    <a href="#"><i>→</i></a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="/api/placeholder/400/300" alt="project 3">
+                <div class="layer">
+                    <h3>Blog & Content Platform</h3>
+                    <p>A modern blog platform with content management system and reader analytics.</p>
+                    <a href="#"><i>→</i></a>
+                </div>
+            </div>
+        </div>
+        <div class="btn-container">
+            <a href="#" class="btn">See More</a>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="contact-row">
+            <div class="contact-left">
+                <h2 class="sub-title">Contact Me</h2>
+                <p><i>✉</i> contact@johndoe.com</p>
+                <p><i>☎</i> +1 234 567 8900</p>
+                <div class="social-media">
+                    <a href="#"><i>fb</i></a>
+                    <a href="#"><i>tw</i></a>
+                    <a href="#"><i>ig</i></a>
+                    <a href="#"><i>in</i></a>
+                </div>
+            </div>
+            <div class="contact-right">
+                <form method="post">
+                    <input type="text" name="name" placeholder="Name" required>
+                    <input type="email" name="email" placeholder="Email" required>
+                    <textarea name="message" rows="6" placeholder=" Message"></textarea>
+                    <button name="submit" type="submit" class="btn">Submit</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="social-media">
+            <a href="#"><i>fb</i></a>
+            <a href="#"><i>tw</i></a>
+            <a href="#"><i>ig</i></a>
+            <a href="#"><i>in</i></a>
+        </div>
+        <p>Copyright © 2025 John Doe. All rights reserved.</p>
+    </footer>
+</body>
+</html>
